@@ -1,0 +1,38 @@
+---
+import { getEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import LessonMenu from "../../components/LessonMenu.astro"; // Asegúrate de tener este menú
+
+const { slug } = Astro.params;
+
+// Obtener la lección específica usando su slug
+const lesson = await getCollection("lessons").then((lessons) =>
+  lessons.find((l) => l.slug === slug)
+);
+
+if (!lesson) {
+  throw new Error(`Lección no encontrada: ${slug}`);
+}
+
+const { Content } = await lesson.render();
+
+// Definir los paths estáticos
+export async function getStaticPaths() {
+  const lessons = await getCollection("lessons");
+  return lessons.map((lesson) => ({
+    params: { slug: lesson.slug },
+  }));
+}
+---
+
+<Layout title={lesson.data.title}>
+  <h1 class="text-3xl font-bold text-center">{lesson.data.title}</h1>
+
+  <LessonMenu selectedSlug={slug} />
+
+  <article
+    class="prose lg:prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-16 rounded-md shadow"
+  >
+    <Content />
+  </article>
+</Layout>
