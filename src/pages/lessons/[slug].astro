@@ -26,12 +26,12 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={lesson.data.title}>
-  <h1 class="text-3xl font-bold text-center">{lesson.data.title}</h1>
+  <h1 class="text-3xl font-bold text-center mb-4">{lesson.data.title}</h1>
 
   <LessonMenu selectedSlug={slug} />
 
   <article
-    class="prose lg:prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-16 rounded-md shadow"
+    class="prose prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-16 rounded-md shadow"
   >
     <Content />
   </article>
