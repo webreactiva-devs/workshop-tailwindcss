@@ -1,0 +1,40 @@
+---
+const { currentSlug, lessons } = Astro.props;
+
+// Encontrar el índice de la lección actual
+const currentIndex = lessons.findIndex((lesson) => lesson.slug === currentSlug);
+
+// Determinar lecciones anterior y siguiente
+const prevLesson = lessons[currentIndex - 1] || null;
+const nextLesson = lessons[currentIndex + 1] || null;
+---
+
+<div class="flex justify-between mt-8 mb-16">
+  <!-- Enlace a la lección anterior -->
+  {
+    prevLesson ? (
+      <a
+        href={`/lessons/${prevLesson.slug}`}
+        class="text-indigo-600 hover:underline"
+      >
+        ← {prevLesson.data.title}
+      </a>
+    ) : (
+      <span />
+    )
+  }
+
+  <!-- Enlace a la lección siguiente -->
+  {
+    nextLesson ? (
+      <a
+        href={`/lessons/${nextLesson.slug}`}
+        class="text-indigo-600 hover:underline"
+      >
+        {nextLesson.data.title} →
+      </a>
+    ) : (
+      <span />
+    )
+  }
+</div>

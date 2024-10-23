@@ -2,6 +2,8 @@
 import { getEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import LessonMenu from "../../components/LessonMenu.astro"; // Asegúrate de tener este menú
+import LessonNav from "../../components/LessonNav.astro";
+import { Code } from "astro:components";
 
 const { slug } = Astro.params;
 
@@ -15,6 +17,8 @@ if (!lesson) {
 }
 
 const { Content } = await lesson.render();
+
+const lessons = await getCollection("lessons");
 
 // Definir los paths estáticos
 export async function getStaticPaths() {
@@ -31,8 +35,9 @@ export async function getStaticPaths() {
   <LessonMenu selectedSlug={slug} />
 
   <article
-    class="prose prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-16 rounded-md shadow"
+    class="prose prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-8 rounded-md shadow"
   >
     <Content />
   </article>
+  <LessonNav currentSlug={slug} lessons={lessons} />
 </Layout>
