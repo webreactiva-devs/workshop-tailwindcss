@@ -1,44 +1,20 @@
-# Astro Starter Kit: Basics
+# Taller de Tailwind CSS
 
-```sh
-npm create astro@latest -- --template basics
-```
+> Taller de Tailwind CSS con cariño para la [Comunidad Malandriner de Web Reactiva](https://webreactiva.com)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Comenzar
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Instala [Node.js](https://nodejs.org/) 
+2. Instala [Yarn](https://classic.yarnpkg.com/lang/en/) o [npm](https://github.com/npm/cli#installation)
+3. Clona este repositorio
+4. Ejecuta `npm install` o `yarn install`
+5. Ejecuta `npm run dev` o `yarn dev`
+6. Visita [http://localhost:4321/](http://localhost:4321/)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+🔥 Sigue los pasos y abre tu editor para cambiar estilos en línea
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Comandos que puedes usar
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -49,6 +25,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

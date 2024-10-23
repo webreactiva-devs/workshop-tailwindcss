@@ -1,0 +1,63 @@
+---
+title: "L10: Responsive"
+---
+
+## Breakpoints y media queries
+
+TailwindCSS utiliza prefijos para aplicar estilos responsivos según el tamaño de la pantalla:
+
+- **sm:** (640px)
+- **md:** (768px)
+- **lg:** (1024px)
+- **xl:** (1280px)
+- **2xl:** (1536px)
+
+---
+
+## Adaptación de diseños a diferentes dispositivos
+
+### Cambio de tamaño de texto según el dispositivo
+
+```html live
+<div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+  Este texto aumenta de tamaño en pantallas más grandes.
+</div>
+```
+
+---
+
+### Cambio de color de fondo según el tamaño de la pantalla
+
+```html live
+<div class="p-8 bg-red-400 sm:bg-blue-400 md:bg-green-400 lg:bg-yellow-400 xl:bg-purple-400">
+  Este div cambia de color según el tamaño de pantalla.
+</div>
+```
+
+---
+
+### Visibilidad condicional según el tamaño de pantalla
+
+```html live
+<div class="block sm:hidden">
+  Este contenido solo se muestra en pantallas pequeñas.
+</div>
+
+<div class="hidden sm:block lg:hidden">
+  Este contenido se muestra solo en pantallas medianas, pero se oculta en pantallas grandes.
+</div>
+
+<div class="hidden lg:block">
+  Este contenido solo se muestra en pantallas grandes.
+</div>
+```
+
+---
+
+### Ejemplo de padding y margin que cambia según el tamaño de pantalla
+
+```html live
+<div class="p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 bg-gray-200">
+  Este div tiene más padding en pantallas más grandes.
+</div>
+```

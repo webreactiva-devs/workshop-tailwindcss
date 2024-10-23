@@ -1,0 +1,56 @@
+---
+title: "L14: Reutilización de estilos"
+---
+
+## Uso de la directiva @apply
+
+La directiva `@apply` en TailwindCSS te permite reutilizar varias clases utilitarias y aplicarlas en una declaración CSS, lo que es útil cuando quieres usar las mismas clases en varios lugares sin repetirlas.
+
+### Ejemplo básico de @apply
+
+
+
+```html live
+<style>
+.button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+</style>
+<button class="button">
+  Botón con @apply
+</button>
+```
+
+En este ejemplo, la clase `.button` reutiliza varias clases de TailwindCSS mediante `@apply` para evitar tener que repetirlas en cada lugar donde se utilice.
+
+---
+
+## Reutilización de estilos con @apply
+
+### Reutilización en botones
+
+Puedes definir un estilo base para los botones y luego reutilizarlo con variantes:
+
+```css
+/* archivo styles.css */
+.button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.button-primary {
+  @apply bg-blue-500 hover:bg-blue-700;
+}
+
+.button-secondary {
+  @apply bg-gray-500 hover:bg-gray-700;
+}
+```
+
+```html live
+<button class="button button-primary">
+  Botón Primario
+</button>
+<button class="button button-secondary">
+  Botón Secundario
+</button>
+```

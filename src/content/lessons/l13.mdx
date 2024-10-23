@@ -1,0 +1,103 @@
+---
+title: "L13: Plugins"
+---
+
+## Uso del plugin Prose
+
+El plugin [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) agrega estilos tipográficos predeterminados a los contenidos en formato HTML largo, como artículos o posts de blogs. Aplica la clase `prose` para obtener automáticamente estilos tipográficos bien formateados.
+
+### Instalación
+1. `npm install -D @tailwindcss/typography`
+
+2. Añadirlo en el archivo `tailwind.config.js`:
+
+```js
+module.exports = {
+  plugins: [require('@tailwindcss/typography')],
+};
+```
+
+### Ejemplo básico de Prose:
+
+```html live
+<div class="prose">
+  <h1>Un título grande para el artículo</h1>
+  <p>
+    Este es un párrafo de ejemplo. El plugin Prose de TailwindCSS te permite estilizar automáticamente el contenido de texto para que tenga un diseño atractivo y fácil de leer.
+  </p>
+  <ul>
+    <li>Punto 1</li>
+    <li>Punto 2</li>
+    <li>Punto 3</li>
+  </ul>
+</div>
+```
+
+Este plugin es útil cuando necesitas aplicar estilos consistentes en grandes bloques de texto, como en blogs o documentación.
+
+---
+
+## Uso del plugin Forms
+
+El plugin [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) mejora el estilo de los formularios, ofreciendo clases predeterminadas que mejoran la apariencia de los inputs, selects, textareas, etc. Sin embargo, puedes personalizarlo para manejar formularios más complejos.
+
+### Instalación
+1. `npm install -D @tailwindcss/forms`
+
+2. Añadirlo en el archivo `tailwind.config.js`:
+
+```js
+module.exports = {
+  plugins: [require('@tailwindcss/forms')],
+};
+```
+
+### Ejemplo complejo de Forms:
+
+```html live
+<div class="min-h-screen bg-gray-50 p-8">
+  <div class="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Formulario de registro avanzado</h2>
+    <form>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label class="block text-gray-700" for="first-name">Nombre:</label>
+          <input class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="text" id="first-name" placeholder="Nombre">
+        </div>
+        <div>
+          <label class="block text-gray-700" for="last-name">Apellido:</label>
+          <input class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="text" id="last-name" placeholder="Apellido">
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700" for="email">Correo electrónico:</label>
+        <input class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="email" id="email" placeholder="correo@ejemplo.com">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700" for="password">Contraseña:</label>
+        <input class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="password" id="password" placeholder="Contraseña">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700" for="phone">Número de teléfono:</label>
+        <input class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="tel" id="phone" placeholder="(123) 456-7890">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700" for="country">País:</label>
+        <select class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="country">
+          <option>Seleccionar país</option>
+          <option>España</option>
+          <option>México</option>
+          <option>Argentina</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700" for="bio">Biografía:</label>
+        <textarea class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="bio" rows="5" placeholder="Cuéntanos algo sobre ti..."></textarea>
+      </div>
+      <div class="flex items-center justify-between">
+        <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 focus:ring-4 focus:ring-blue-300">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+```

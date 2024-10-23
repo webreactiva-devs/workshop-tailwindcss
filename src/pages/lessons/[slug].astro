@@ -3,6 +3,7 @@ import { getEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import LessonMenu from "../../components/LessonMenu.astro"; // Asegúrate de tener este menú
 import LessonNav from "../../components/LessonNav.astro";
+import { getLessons } from "../../data/lessons";
 
 const { slug } = Astro.params;
 
@@ -17,7 +18,7 @@ if (!lesson) {
 
 const { Content } = await lesson.render();
 
-const lessons = await getCollection("lessons");
+const lessons = await getLessons();
 
 // Definir los paths estáticos
 export async function getStaticPaths() {

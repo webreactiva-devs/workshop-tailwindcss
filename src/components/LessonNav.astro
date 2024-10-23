@@ -17,7 +17,7 @@ const nextLesson = lessons[currentIndex + 1] || null;
         href={`/lessons/${prevLesson.slug}`}
         class="text-indigo-600 hover:underline"
       >
-        ← {prevLesson.data.title}
+        ← {prevLesson.title}
       </a>
     ) : (
       <span />
@@ -31,7 +31,7 @@ const nextLesson = lessons[currentIndex + 1] || null;
         href={`/lessons/${nextLesson.slug}`}
         class="text-indigo-600 hover:underline"
       >
-        {nextLesson.data.title} →
+        {nextLesson.title} →
       </a>
     ) : (
       <span />

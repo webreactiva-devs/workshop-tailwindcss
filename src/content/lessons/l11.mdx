@@ -1,0 +1,67 @@
+---
+title: "L11: Efectos y animaciones"
+---
+
+## Pseudo-clases y estados
+
+### Clases para hover, focus, active, etc.
+
+TailwindCSS proporciona clases para manejar los diferentes estados de los elementos, como `hover`, `focus`, `active`, y `visited`, que permiten cambiar estilos según la interacción del usuario.
+
+```html live
+<a href="#" class="text-blue-500 hover:text-yellow-700">
+  Enlace con efecto hover
+</a>
+```
+
+En este ejemplo, el color del enlace cambia cuando el usuario pasa el cursor sobre él.
+
+---
+
+### Manejo de estados interactivos
+
+Los estados como `active` permiten cambiar el estilo al interactuar con elementos, como en el siguiente botón:
+
+```html live
+<button class="bg-red-500 active:bg-red-700 text-white py-2 px-4 rounded">
+  Botón activo
+</button>
+```
+
+El color de fondo del botón cambia cuando se hace clic en él gracias a la clase `active:bg-red-700`.
+
+---
+
+## Transiciones y animaciones
+
+### Aplicación de efectos de transición
+
+TailwindCSS facilita la creación de transiciones suaves en elementos con la clase `transition`. Se pueden agregar efectos como escalar o traducir el elemento durante la interacción.
+
+```html live
+<div class="transition duration-500 ease-in-out transform hover:-translate-y-5 hover:scale-150 p-4 bg-green-400 text-white hover:bg-red-500">
+  Elemento con transición
+</div>
+```
+
+---
+
+### Uso de animaciones predefinidas
+
+TailwindCSS también incluye varias animaciones predefinidas como `animate-spin`, `animate-pulse`, y `animate-bounce`, que se aplican fácilmente a los elementos.
+
+#### Ejemplo: Spinner de carga
+
+```html live
+<div class="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+```
+
+Este spinner gira continuamente utilizando la clase `animate-spin`.
+
+#### Ejemplo: Efecto de rebote
+
+```html live
+<div class="animate-bounce p-4 bg-red-400 text-white">
+  Elemento con efecto de rebote
+</div>
+```

@@ -1,15 +1,14 @@
 ---
 import LessonMenu from "../components/LessonMenu.astro";
 import Layout from "../layouts/Layout.astro";
+import { Content } from "../data/contentindex.md";
 ---
 
 <Layout title="Taller de Tailwind CSS">
-  <h1 class="text-3xl font-bold text-center">
-    Taller de Tailwind CSS en Web Reactiva
-  </h1>
   <LessonMenu />
-
-  <div class="flex justify-center mt-8">
-    <img src="https://c.tenor.com/gTg8ZSZMR6YAAAAC/tenor.gif" />
-  </div>
+  <article
+    class="prose prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-8 rounded-md shadow"
+  >
+    <Content />
+  </article>
 </Layout>
