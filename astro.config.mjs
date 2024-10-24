@@ -10,7 +10,7 @@ export default defineConfig({
     syntaxHighlight: "prism",
   },
   integrations: [
-    tailwind({ config: { applyBaseStyles: false }}),
+    tailwind({ config: { applyBaseStyles: false } }),
     liveCode({
       layout: "/src/components/LiveCodeLayout.astro",
     }),

@@ -3,6 +3,7 @@ import { getEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import LessonMenu from "../../components/LessonMenu.astro"; // Asegúrate de tener este menú
 import LessonNav from "../../components/LessonNav.astro";
+import Quiz from "../../components/Quiz.astro";
 import { getLessons } from "../../data/lessons";
 
 const { slug } = Astro.params;
@@ -38,6 +39,7 @@ export async function getStaticPaths() {
     class="prose prose-xl mt-4 mx-auto w-full max-w-6xl bg-gray-100 p-8 rounded-md shadow"
   >
     <Content />
+    <Quiz questions={lesson.data.quiz} />
   </article>
   <LessonNav currentSlug={slug} lessons={lessons} />
 </Layout>

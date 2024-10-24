@@ -1,0 +1,80 @@
+---
+const { questions } = Astro.props;
+---
+
+<div class="mb-8 border-grey-800 border-4 rounded p-4">
+  <h3>A ver cuánto has aprendido...</h3>
+  <div id="quiz-container" class="my-8">
+    <!-- Las preguntas se inyectarán aquí dinámicamente -->
+  </div>
+</div>
+
+<script define:vars={{ questions }}>
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Mezclar aleatoriamente las preguntas
+  const shuffledQuestions = shuffleArray([...questions]);
+
+  shuffledQuestions.forEach((questionObj, index) => {
+    const questionWrapper = document.createElement("div");
+
+    // Crear título de la pregunta
+    const questionTitle = document.createElement("h2");
+    questionTitle.classList.add("text-xl", "font-bold", "mb-4");
+    questionTitle.innerText = questionObj.question;
+    questionWrapper.appendChild(questionTitle);
+
+    // Mezclar aleatoriamente las opciones de respuesta
+    const shuffledOptions = shuffleArray([...questionObj.options]);
+
+    // Crear las opciones de respuesta
+    shuffledOptions.forEach((option, idx) => {
+      const optionWrapper = document.createElement("div");
+      optionWrapper.classList.add("my-2");
+
+      const label = document.createElement("label");
+      label.classList.add("flex", "items-center", "space-x-2");
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `question-${index}`;
+      input.value = option;
+      input.classList.add("form-radio", "h-4", "w-4");
+
+      const span = document.createElement("span");
+      span.innerText = option;
+
+      label.appendChild(input);
+      label.appendChild(span);
+      optionWrapper.appendChild(label);
+      questionWrapper.appendChild(optionWrapper);
+
+      // Añadir evento para mostrar la respuesta correcta o incorrecta al seleccionar el radio button
+      input.addEventListener("change", () => {
+        const isCorrect = input.value === questionObj.correctAnswer;
+        result.innerText = isCorrect
+          ? "¡Respuesta correcta!"
+          : "Respuesta incorrecta.";
+        result.classList.remove("bg-green-500", "bg-red-500");
+        result.classList.add(isCorrect ? "bg-green-500" : "bg-red-500");
+        result.classList.add("text-white", "p-2", "w-full", "text-center");
+      });
+    });
+
+    // Elemento para mostrar el resultado
+    const result = document.createElement("div");
+    result.classList.add("mt-4", "font-bold");
+
+    questionWrapper.appendChild(result);
+    quizContainer.appendChild(questionWrapper);
+  });
+
+  // Función para mezclar aleatoriamente un array
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+</script>

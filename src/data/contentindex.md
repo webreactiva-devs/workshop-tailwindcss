@@ -1,7 +1,7 @@
 
 # Taller de Tailwind CSS en Web Reactiva
 
-Este taller cubre los conceptos básicos y prácticos de Tailwind CSS.
+Este taller cubre los conceptos básicos y prácticos de [Tailwind CSS](https://tailwindcss.com/docs/installation).
 
 La mejor forma de usarlo es una de estas dos:
 
